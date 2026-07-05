@@ -1,22 +1,16 @@
-import java.util.Scanner;
-
+package Map;
+import java.util.HashSet;
 public class eight {
     public static void main(String[] args) {
-        Scanner  hi = new Scanner(System.in);
-        System.out.println("Enter the factorial number: ");
-        int num = hi.nextInt();
-
-       int i, fact = 1;
-       if(num < 0){
-        System.out.println("The Factorial is not possible: ");
-       }
-       else{
-        for(i=1;i<=num;i++){
-            fact = fact*i;
+        HashSet<Integer> set = new HashSet<>();
+        int a[] = {8,7,2,5,3,1};
+        int target = 10;
+        for(int num : a){
+            set.add(num);
+            int req = target - num;
+            if(set.contains(req)){
+                System.out.println("True");
+            }
         }
-        System.out.println("Factorial of "+num+"is = "+fact);
-       }
-
     }
-    
 }

@@ -1,32 +1,25 @@
-import java.util.Scanner;
-
+package Map;
+import java.util.HashSet;
 public class seven {
     public static void main(String[] args) {
-        Scanner hi = new Scanner(System.in);
-        System.out.println("Enter the Lower limit: ");
-        int low = hi.nextInt();
-        System.out.println("Enter the upper limit:");
-        int high = hi.nextInt();
-
-        if(low < 2){
-            low = 2;
+        HashSet<Integer> set = new HashSet<>();
+        int a[] = {100,4,200,1,3,2};
+        int count =0;
+        for(int num : a){
+            set.add(num);
         }
-
-        int num, i, flag;
-        for(num =low;num<=high;num++){
-            flag =0;
-            for(i=2;i<=num-1;i++){
-                if(num%i==0){
-                    flag =1;
-                    break;
+        int longest = 0;
+        for(int num : set){
+            if (!set.contains(num - 1)) {
+                int currentNum =  num;
+                count = 1;
+                while(set.contains(currentNum + 1)){
+                    currentNum++;
+                    count++;
                 }
+                longest = Math.max(longest, count);
             }
-            if(flag == 0){
-            System.out.println(num+"Is a prime number");
-            }
-        
         }
-        
+        System.out.println("Longest Sequence length = "+longest);
     }
-    
 }

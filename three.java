@@ -1,26 +1,22 @@
-import java.util.Scanner;
-
-
+package Map;
+import java.util.HashSet;
 public class three {
     public static void main(String[] args) {
-        int a , originalnum, reverse  = 0, remainder;
-        Scanner hi = new Scanner(System.in);
-        System.out.println("Enter the plaindrome number: ");
-        a = hi.nextInt();
+        HashSet<Integer> set = new HashSet<>();
+        int a[] = {1,2,3,5};
+        int b[] = {5,30,9};
 
-        originalnum = a;
-
-        while(a!=0){
-            remainder = a%10;
-            reverse = reverse * 10 + remainder;
-            a = a/10;
+        for(int num : a){
+            set.add(num);
         }
 
-        if(originalnum == reverse) {
-            System.out.println("The number"+originalnum+" is palindrome!!");
+        boolean found = false;
+        for(int num : b){
+            if(set.contains(num)){
+                found = true;
+                break;
+            }
         }
-        else{
-            System.out.println("The number"+originalnum+" is not a palindrome number!, okay. So try another number.");
-        }
+        System.out.println(found);
     }
 }
