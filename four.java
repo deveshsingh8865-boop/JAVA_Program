@@ -1,16 +1,27 @@
-package Map;
-import java.util.HashSet;
+package Loops;
+
 public class four {
     public static void main(String[] args) {
-        HashSet<Integer>  set = new HashSet<>();
-        int a[] = {1,2,3};
-        int b[] = {3,4,5};
-        for(int i=0;i<a.length;i++){
-            set.add(a[i]);
+        int price[] = {7,1,5,3,6,4};
+        int maxProfit = 0;
+        int min = price[0];
+        int buyDay = 0;
+        int sellDay= 0;
+        for(int i=1;i<price.length;i++){
+            if(min > price[i]){
+                min = price[i];
+                buyDay = i;
+            }
+            int profit = price[i] - min;
+
+            if(profit > maxProfit){
+                maxProfit = profit;
+                sellDay = i;
+            }
         }
-        for(int j=0;j<b.length;j++){
-            set.add(b[j]);
-        }
-        System.out.println(set);
+        System.out.println("BuyDay "+buyDay);
+        System.out.println("Buy the stock at "+min);
+        System.out.println("Sell Day = "+sellDay);
+        System.out.println("Max Profit: "+maxProfit);
     }
 }

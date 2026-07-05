@@ -1,22 +1,29 @@
-package Map;
-import java.util.HashSet;
+package Loops;
+
+import java.util.*;
+
 public class three {
     public static void main(String[] args) {
-        HashSet<Integer> set = new HashSet<>();
-        int a[] = {1,2,3,5};
-        int b[] = {5,30,9};
+        HashSet<Character> set = new HashSet<>();
+        Scanner sc = new Scanner(System.in);
+        String S = sc.next();
+        String S1 = sc.next();
 
-        for(int num : a){
-            set.add(num);
+        S = S.toLowerCase();
+        S1 = S1.toLowerCase();
+
+        for(char ch : S.toCharArray()){
+            set.add(ch);
         }
-
-        boolean found = false;
-        for(int num : b){
-            if(set.contains(num)){
-                found = true;
+        for(char ch : S1.toCharArray()){
+            if(set.contains(ch)){
+                System.out.println("true");
                 break;
             }
+            set.add(ch);
         }
-        System.out.println(found);
+        System.out.println(set);
+
+
     }
 }

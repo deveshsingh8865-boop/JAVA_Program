@@ -1,38 +1,16 @@
-package Map;
-import java.util.*;
+package Loops;
+
 public class one {
     public static void main(String[] args) {
-        HashSet<Integer> set = new HashSet<>();
-        set.add(10);
-        set.add(12);
-        set.add(14);
-        set.add(16);
-        System.out.println(set);
 
-//        set.add(12);
-//        System.out.println(set);
-//        if(set.contains(12)){
-//            System.out.println("Present in the set!");
-//        }
-//        else{
-//            System.out.println("Not Present!");
-//        }
-        // remove element
-
-//        set.remove(12);
-//        System.out.println(set);
-        // size
-
-//        int a = set.size();
-//        System.out.println("Size of set is ="+a);
-        // iterate
-        for(int val : set){
-            System.out.println(val);
+        int num [] = {2,7,11,15};
+        int target = 9;
+        for(int i=0;i<num.length;i++){
+            for(int j=i+1;j<num.length;j++){
+                if(num[i] + num[j] == target){
+                    System.out.println("Found at index: ="+"["+i+","+j+"]");
+                }
+            }
         }
-        // clear
-
-        set.clear();
-        System.out.println(set);
-
     }
 }

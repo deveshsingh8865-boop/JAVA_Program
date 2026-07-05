@@ -1,21 +1,20 @@
-package Map;
-import java.util.HashSet;
+package Loops;
+
 public class five {
     public static void main(String[] args) {
-        HashSet<Integer> set = new HashSet<>();
-        int a[] = {1,2,3,4,5};
-        int b[] = {5,4,7,8,6,2};
-        HashSet<Integer> result = new HashSet<>();
-        for(int num : a){
-            set.add(num);
-        }
-        for(int num : b){
+        int num[] = {0,1,0,3,12};
+        int j = 0;
 
-            if(set.contains(num)){
-                result.add(num);
+        for(int i=0;i<num.length;i++){
+            if(num[i]!=0){
+                int temp = num[i];
+                num[i] = num[j];
+                num[j] = temp;
+                j++;
             }
         }
-        System.out.println(result);
-
+        for(int n : num){
+            System.out.print(n+" ");
+        }
     }
 }
